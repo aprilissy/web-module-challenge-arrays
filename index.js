@@ -31,7 +31,7 @@ var originalFlavors = ["Banana Nut Fudge",
     "Vanilla Burnt Almond"];
 
 let workingFlavors = [...originalFlavors]; //creating a copy so origional is not mutated.
-console.log(workingFlavors) //checking the copy was created and is correct.
+console.log(workingFlavors); //checking the copy was created and is correct.
 
 /* Task 1: Confirm that the array is exactly 31 flavors. Your function should accept:
 
@@ -152,12 +152,16 @@ DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem.
 
 hint - you can use the .includes method to help you solve this */
 
-function filterByWord(/*code here*/){
-
-    /*code here*/
-
+function filterByWord(workingArray,workingString){
+	let filteredArray = [];
+    for(let i = 0; i < workingArray.length; i++ ){
+        if(workingArray[i].includes(workingString)){
+			filteredArray.push(workingArray[i]);
+		}
+    } return filteredArray;
 }
-
+filteredArray = filterByWord(originalFlavors,"Chocolate");
+console.log(filteredArray);
 
 
 /* 🧁🍦🍨 STRETCH 🍨🍦🍫*/ 
@@ -172,12 +176,15 @@ and should return the average number of words per item in the array.
 
 For example, getAverageWordLength(originalFlavors) should return a number between 0 and 3. */
 
-function getAverageWordLength(/*code here*/){
-
-    /*code here*/
-
+function getAverageWordLength(workingArray){
+    let averageArray = [];
+    let total = 0;
+    for(let i = 0; i < workingArray.length; i++ ){
+        total += workingArray[i].length;
+    } return averageArray;
 }
-
+averageArray = getAverageWordLength(originalFlavors);
+console.log(averageArray);
 
 /* STRETCH 2: Baskin Robins now offers new flavors, seasonal flavors, and even regional flavors. Write a function that will randomly select a total of 31 flavors from originalFlavors, currentFlavors, seasonalFlavors, and regionalFlavors.
 
